@@ -16,8 +16,8 @@ async_engine = create_async_engine(
     echo=True,
 )
 
-sync_session = sessionmaker(sync_engine)
-async_session = async_sessionmaker(async_engine)
+session_factory = sessionmaker(sync_engine)
+async_session_factory = async_sessionmaker(async_engine)
 
-class Base(DeclarativeBase()):
+class Base(DeclarativeBase):
     pass
